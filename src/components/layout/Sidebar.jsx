@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Flag, Users, MessageSquare, MapPin, LogOut } from 'lucide-react';
+import { LayoutDashboard, Flag, Users, MessageSquare, MapPin, LogOut, Menu } from 'lucide-react';
 import './Sidebar.css';
 
 const menuItems = [
@@ -12,6 +13,7 @@ const menuItems = [
 
 export default function Sidebar() {
   const navigate = useNavigate();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const admin = (() => {
     try {
@@ -28,8 +30,15 @@ export default function Sidebar() {
     navigate('/login');
   };
 
+  const closeMobile = () => setMobileOpen(false);
+
   return (
-    <aside className="sidebar">
+    <>
+      <button className="mobile-menu-btn" onClick={() => setMobileOpen(true)} aria-label="메뉴 열기">
+        <Menu size={22} />
+      </button>
+      {mobileOpen && <div className="sidebar-overlay" onClick={closeMobile} />}
+      <aside className={`sidebar ${mobileOpen ? 'open' : ''}`}>
       <div className="sidebar-logo">
         <div className="sidebar-logo-icon">
           <LayoutDashboard size={20} color="#fff" />
@@ -56,6 +65,7 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `sidebar-link ${isActive ? 'active' : ''}`
               }
+              onClick={closeMobile}
             >
               <Icon size={20} />
               <span className="sidebar-link-label">{item.label}</span>
@@ -74,5 +84,6 @@ export default function Sidebar() {
         </button>
       </div>
     </aside>
+    </>
   );
 }

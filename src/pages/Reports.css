@@ -416,3 +416,42 @@
   gap: 9px;
   animation: fade-in 0.2s ease;
 }
+
+@media (max-width: 768px) {
+  .filter-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .reports-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .reports-table {
+    min-width: 700px;
+  }
+
+  .modal-card {
+    width: calc(100vw - 32px);
+    max-width: 440px;
+  }
+
+  .image-modal-img {
+    max-width: calc(100vw - 32px);
+    max-height: 60vh;
+  }
+
+  .image-modal-deleted {
+    width: calc(100vw - 32px);
+    max-width: 520px;
+    height: 280px;
+  }
+
+  .toast {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    bottom: 16px;
+  }
+}

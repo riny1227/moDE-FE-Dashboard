@@ -191,3 +191,24 @@
 .toggle-switch.active .toggle-knob {
   transform: translateX(18px);
 }
+
+@media (max-width: 768px) {
+  .places-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .places-search {
+    max-width: 100%;
+    order: -1;
+    width: 100%;
+  }
+
+  .places-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .places-table {
+    min-width: 650px;
+  }
+}

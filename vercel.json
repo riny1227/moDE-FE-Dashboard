@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "http://moing.co.kr:8080/api/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
