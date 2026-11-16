@@ -1,0 +1,229 @@
+/*
+ * 캡처용 페이지: 배경은 흰색, 장식은 최소화.
+ * main-content의 회색 배경과 패딩을 덮어 캡처 영역 전체를 흰색으로 만든다.
+ */
+.analytics-page {
+  background: #fff;
+  margin: -32px;
+  padding: 32px;
+  min-height: 100vh;
+}
+
+.analytics-page-header {
+  margin-bottom: 24px;
+}
+
+/* 기준 시각 · 집계 범위 안내 */
+.analytics-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #63718C;
+}
+
+.analytics-asof {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.analytics-meta-divider {
+  width: 1px;
+  height: 11px;
+  background: #D5DAE0;
+}
+
+.analytics-exclusion {
+  color: #8B95A1;
+}
+
+/* KPI 카드 그리드 */
+.analytics-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.analytics-kpi-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.analytics-kpi-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 차트 블록 */
+.analytics-chart {
+  margin-top: 24px;
+}
+
+.analytics-chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.analytics-chart-title {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222328;
+}
+
+.analytics-chart-head .analytics-chart-title {
+  margin: 0;
+}
+
+.analytics-chart-empty {
+  margin: 0;
+  padding: 44px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #8B95A1;
+  background: #FAFBFC;
+  border: 1px solid #F1F3F5;
+  border-radius: 10px;
+}
+
+.analytics-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* 장소 수 · 리뷰 수 토글 */
+.metric-toggle {
+  display: inline-flex;
+  padding: 3px;
+  background: #F1F3F5;
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.metric-toggle-btn {
+  height: 28px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #63718C;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.metric-toggle-btn.active {
+  background: #fff;
+  color: #222328;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* 시군구 상위 10 표 */
+.analytics-table-wrap {
+  border: 1px solid #E5E8EB;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analytics-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8B95A1;
+  background: #FAFBFC;
+  border-bottom: 1px solid #E5E8EB;
+  white-space: nowrap;
+}
+
+.analytics-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #F1F3F5;
+  font-size: 13px;
+  color: #222328;
+}
+
+.analytics-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.analytics-td-rank {
+  color: #8B95A1;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.analytics-td-district {
+  font-weight: 600;
+}
+
+.analytics-td-region {
+  margin-left: 6px;
+  font-size: 11px;
+  color: #8B95A1;
+}
+
+.analytics-td-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.analytics-td-muted {
+  color: #63718C;
+}
+
+.analytics-table-note {
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 11px;
+  color: #8B95A1;
+  background: #FAFBFC;
+  border-top: 1px solid #F1F3F5;
+}
+
+/* 1920px 폭에서 섹션 하나가 한 화면에 들어가도록 높이를 고정한다 */
+@media (min-width: 1600px) {
+  .analytics-section {
+    min-height: 880px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1280px) {
+  .analytics-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .analytics-kpi-grid,
+  .analytics-kpi-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-page {
+    margin: -68px -16px -24px;
+    padding: 68px 16px 24px;
+  }
+
+  .analytics-kpi-grid,
+  .analytics-kpi-grid--3,
+  .analytics-kpi-grid--2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

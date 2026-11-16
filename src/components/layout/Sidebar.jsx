@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Flag, Users, MessageSquare, MapPin, LogOut, Menu } from 'lucide-react';
+import { LayoutDashboard, Flag, Users, MessageSquare, MapPin, BarChart3, LogOut, Menu } from 'lucide-react';
 import './Sidebar.css';
 
 const menuItems = [
@@ -9,6 +9,7 @@ const menuItems = [
   { path: '/users', label: '사용자관리', icon: Users },
   { path: '/reviews', label: '리뷰관리', icon: MessageSquare },
   { path: '/places', label: '장소관리', icon: MapPin },
+  { path: '/data', label: '데이터', icon: BarChart3 },
 ];
 
 export default function Sidebar() {
