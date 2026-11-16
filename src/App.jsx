@@ -5,6 +5,7 @@ import Reports from './pages/Reports';
 import Users from './pages/Users';
 import Reviews from './pages/Reviews';
 import Places from './pages/Places';
+import Data from './pages/Data';
 import Login from './pages/Login';
 import './App.css';
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/users" element={<RequireAuth><Users /></RequireAuth>} />
           <Route path="/reviews" element={<RequireAuth><Reviews /></RequireAuth>} />
           <Route path="/places" element={<RequireAuth><Places /></RequireAuth>} />
+          <Route path="/data" element={<RequireAuth><Data /></RequireAuth>} />
         </Routes>
       </main>
     </>

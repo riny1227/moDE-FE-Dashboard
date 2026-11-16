@@ -1,0 +1,94 @@
+.heatmap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: 30px repeat(24, minmax(0, 1fr));
+  gap: 3px;
+  align-items: center;
+}
+
+.heatmap-corner {
+  height: 16px;
+}
+
+.heatmap-hour {
+  font-size: 10px;
+  color: #8B95A1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.heatmap-day {
+  font-size: 12px;
+  font-weight: 600;
+  color: #63718C;
+  text-align: center;
+}
+
+.heatmap-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 22px;
+  border-radius: 3px;
+}
+
+.heatmap-cell--zero {
+  background: #F4F6F8;
+}
+
+.heatmap-cell:hover {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  z-index: 2;
+}
+
+/* 마우스 오버 시 리뷰 수 툴팁 */
+.heatmap-tip {
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #2C343F;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+  z-index: 3;
+}
+
+.heatmap-cell:hover .heatmap-tip {
+  opacity: 1;
+}
+
+.heatmap-scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.heatmap-scale-label {
+  font-size: 11px;
+  color: #8B95A1;
+  font-variant-numeric: tabular-nums;
+}
+
+.heatmap-scale-bar {
+  width: 120px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(38, 81, 137, 0.12) 0%,
+    rgba(38, 81, 137, 1) 100%
+  );
+}
